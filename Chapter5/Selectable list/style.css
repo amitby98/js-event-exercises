@@ -1,5 +1,9 @@
+body {
+  font-size: 30px;
+}
 .selected {
-  background: #0f0;
+  background: hotpink;
+  font-size: 40px;
 }
 
 li {
