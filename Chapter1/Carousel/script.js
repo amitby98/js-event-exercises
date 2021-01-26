@@ -1,26 +1,23 @@
-let a = 1;
-let transX = -400;
+let transX = 0;
+const increment = 400;
 let buttonRight = document.getElementById("right");
 let buttonLeft = document.getElementById("left");
 let imgs = document.getElementById("container");
+imgs.style.transform = "translateX(-25px)";
+let allImg = document.querySelectorAll("img");
 
 buttonRight.addEventListener("click", (e) => {
-  if (transX >= -900) {
-    imgs.style.transform = "translateX(" + transX * a + "px)";
-    a = a + 1;
-  } else if (transX < -900) {
-    transX = -900;
+  transX = transX - increment;
+  if (!(transX >= -925)) {
+    transX = -925;
   }
+  imgs.style.transform = "translateX(" + transX + "px)";
 });
 
 buttonLeft.addEventListener("click", (e) => {
-  if (transX <= 900) {
-    imgs.style.transform = "translateX(" + transX * a + "px)";
-    a = a - 1;
-  } else if (transX > 900) {
-    transX = 900;
+  transX = transX + increment;
+  if (!(transX <= -25)) {
+    transX = -25;
   }
+  imgs.style.transform = "translateX(" + transX + "px)";
 });
-
-// כפתור למעלה מ0 עד מינוס 900
-// כפתור למטה ממינוס 900 עד 0
